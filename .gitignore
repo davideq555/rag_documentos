@@ -1,0 +1,85 @@
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# FastAPI / Alembic
+*.db
+*.sqlite3
+alembic/versions/*.pyc
+
+# Node
+node_modules/
+.pnp
+.pnp.js
+
+# Frontend build
+frontend/dist/
+frontend/.vite/
+frontend/build/
+
+# Testing
+coverage/
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker (no container state in repo)
+docker-compose.override.yml
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Database migrations (keep the folder but not generated files)
+# backend/alembic/versions/*.py  (keep these if they are manual, not auto-generated)
+
+# Secrets (never commit)
+*.pem
+*.key
+credentials.json
