@@ -3,7 +3,6 @@ from typing import Any, Dict, List
 
 import httpx
 from pgvector.sqlalchemy import Vector
-from sqlalchemy import text
 
 from backend.config import get_settings
 

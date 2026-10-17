@@ -7,7 +7,7 @@ class Settings(BaseSettings):
     DATABASE_URL: str = "postgresql://davideq:password@localhost:5432/ragdb"
     OLLAMA_BASE_URL: str = "http://localhost:11434"
     OLLAMA_EMBED_MODEL: str = "nomic-embed-text"
-    OLLAMA_CHAT_MODEL: str = "qwen3-coder"
+    OLLAMA_CHAT_MODEL: str = "llama3.2"
     CHUNK_SIZE: int = 500
     CHUNK_OVERLAP: int = 50
 

@@ -14,6 +14,70 @@ Aplicación web para cargar documentos (PDF, DOCX, MD), construir un RAG a parti
 
 ---
 
+## Puesta en marcha local
+
+Desde la raíz del proyecto (`rag_documentos`), sigue estos pasos. Necesitas
+Docker, Python, Node.js/npm y Ollama instalados.
+
+### 1. Levantar PostgreSQL + pgvector
+
+```bash
+docker compose up -d
+```
+
+### 2. Aplicar las migraciones
+
+```bash
+alembic -c backend/alembic.ini upgrade head
+```
+
+### 3. Iniciar Ollama
+
+En otra terminal:
+
+```bash
+ollama serve
+ollama pull nomic-embed-text
+ollama pull llama3.2
+```
+
+Ollama debe quedar disponible en `http://localhost:11434`.
+
+### 4. Iniciar el backend FastAPI
+
+Desde la raíz del proyecto:
+
+```bash
+uvicorn backend.main:app --reload
+```
+
+La API estará disponible en `http://localhost:8000` y su documentación
+interactiva en `http://localhost:8000/docs`.
+
+### 5. Iniciar el frontend React
+
+En otra terminal:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+El frontend estará disponible normalmente en `http://localhost:5173`.
+
+Para detener únicamente la base de datos:
+
+```bash
+docker compose down
+```
+
+> El backend no incluye actualmente un `requirements.txt` ni un
+> `pyproject.toml`. Si faltan dependencias Python, instálalas en un entorno
+> virtual según los paquetes listados en la sección de dependencias.
+
+---
+
 ## Estructura de la base de datos
 
 ### Tabla `documents`

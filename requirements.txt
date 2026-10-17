@@ -10,3 +10,4 @@ python-docx
 httpx
 python-dotenv
 pydantic-settings
+psycopg[binary]
